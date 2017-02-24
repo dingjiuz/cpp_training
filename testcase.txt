@@ -1,0 +1,60 @@
+#include "hiker.hpp"
+#include <gtest/gtest.h>
+
+using namespace ::testing;
+
+
+TEST(Hiker, nothing_can_put_in_bag)
+{
+    int limitWeight = 1;
+    
+    ASSERT_EQ(0, obj.findKnapsack());
+}
+
+TEST(Hiker, 10return15)
+{
+    int limitWeight = 10;
+    std::vector<GOODS> vg = {std::make_pair<int,int>(2,6),
+                          std::make_pair<int,int>(2,3),
+                          std::make_pair<int,int>(6,5),
+                          std::make_pair<int,int>(5,4),
+                          std::make_pair<int,int>(4,6)};  
+    Knapsack obj(limitWeight,vg);
+    ASSERT_EQ(15, obj.findKnapsack());
+}
+
+TEST(Hiker, 7return12)
+{
+    int limitWeight = 7;
+    std::vector<GOODS> vg = {std::make_pair<int,int>(2,6),
+                          std::make_pair<int,int>(2,3),
+                          std::make_pair<int,int>(6,5),
+                          std::make_pair<int,int>(5,4),
+                          std::make_pair<int,int>(4,6)};  
+    Knapsack obj(limitWeight,vg);
+    ASSERT_EQ(12, obj.findKnapsack());
+}
+
+TEST(Hiker, 9return15)
+{
+    int limitWeight = 9;
+    std::vector<GOODS> vg = {std::make_pair<int,int>(2,6),
+                          std::make_pair<int,int>(2,3),
+                          std::make_pair<int,int>(6,5),
+                          std::make_pair<int,int>(5,4),
+                          std::make_pair<int,int>(4,6)};  
+    Knapsack obj(limitWeight,vg);
+    ASSERT_EQ(15, obj.findKnapsack());
+}
+
+TEST(Hiker, 5return11)
+{
+    int limitWeight = 5;
+    std::vector<GOODS> vg = {std::make_pair<int,int>(2,6),
+                          std::make_pair<int,int>(2,3),
+                          std::make_pair<int,int>(3,5),
+                          std::make_pair<int,int>(5,5),
+                          std::make_pair<int,int>(4,6)};  
+    Knapsack obj(limitWeight,vg);
+    ASSERT_EQ(11, obj.findKnapsack());
+}
